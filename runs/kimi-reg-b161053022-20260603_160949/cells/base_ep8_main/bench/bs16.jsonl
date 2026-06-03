@@ -1,0 +1,1 @@
+{"run_name": "default", "batch_size": 16, "input_len": 2048, "output_len": 2048, "latency": 27.3202, "input_throughput": 49103.39, "output_throughput": 1229.44, "overall_throughput": 2398.81, "last_ttft": 0.6673, "last_gen_throughput": 1224.99, "acc_length": -1.0, "cache_hit_rate": null}
