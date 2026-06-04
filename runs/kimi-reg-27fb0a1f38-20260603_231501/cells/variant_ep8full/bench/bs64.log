@@ -1,0 +1,42 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:61: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/constants.py:277: FutureWarning: The `HF_HUB_ENABLE_HF_TRANSFER` environment variable is deprecated as 'hf_transfer' is not used anymore. Please use `HF_XET_HIGH_PERFORMANCE` instead to enable high performance transfer with Xet. Visit https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hfxethighperformance for more details.
+  warnings.warn(
+max_running_requests_per_dp=3548
+dp_size=1
+skip_max_running_requests_threshold=3548
+skip_token_capacity_threshold=1816896
+======== Warmup Begin ========
+Warmup with batch_size=[64]
+#Input tokens: 65536
+#Output tokens: 1024
+batch size: 64
+input_len: 1024
+output_len: 16
+latency: 15.43 s
+input throughput: 4331.45 tok/s
+output throughput: 3412.95 tok/s
+last_ttft: 15.13 s
+last generation throughput: 4.25 tok/s
+======== Warmup End   ========
+
+#Input tokens: 131072
+#Output tokens: 131072
+batch size: 64
+input_len: 2048
+output_len: 2048
+latency: 44.31 s
+input throughput: 30485.79 tok/s
+output throughput: 3276.29 tok/s
+last_ttft: 4.30 s
+last generation throughput: 3281.18 tok/s
+
+Results are saved to /tmp/ep8nv_bench/bs64.jsonl
+
+Input lens: [2048]. Output lens: [2048].
+|   batch size |   input len |   latency (s) |   input throughput (tok/s) |   output throughput (tok/s) | acc length   |   ITL (ms) |   input cost ($/1M) |   output cost ($/1M) | cache hit rate   |
+|--------------|-------------|---------------|----------------------------|-----------------------------|--------------|------------|---------------------|----------------------|------------------|
+|           64 |        2048 |         44.31 |                    30485.8 |                     3276.29 | n/a          |      19.53 |                0.05 |                 0.34 | n/a              |
+
+  [SANITY] bench_decode=3276.3  server_decode_median=3305.4 (max 3332.2, n=51)  diff=-0.9%  OK
+           bench_prefill(input)=30485.8   (full server prefill/decode lines kept in the *.serverlog slice)
